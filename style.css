@@ -21,6 +21,7 @@ body, html {
     background-position: center;
     animation: bgimgdark 5s infinite;
     transition: background-color 2s ease-in-out;
+
   }
 
   @keyframes bgimgdark {
@@ -28,13 +29,10 @@ body, html {
       background-color: black
     }
     25% {
-      background-color: rgb(10, 0, 0)
-    }
-    50% {
-      background-color: rgb(0, 10, 0)
+      background-color: rgb(0, 0, 0)
     }
     75% {
-      background-color: rgb(0, 0, 10)
+      background-color: rgb(0, 0, 00)
     }
     100% {
       background-color: black
@@ -106,7 +104,7 @@ body, html {
     top: 0;
     width: 100%;
     color: white;
-    z-index: 999;
+    z-index: 1000;
   }
   
   .navbar-link {
@@ -141,3 +139,22 @@ body, html {
     font-weight: bold;
   }
   
+#desktopBkGroundOverlay{
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.01); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s;
+    pointer-events: none;
+    font-size: 9px;
+    font-weight: bold;
+    color: #00ff00; /* Green color for the text */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); /* Green glow effect */
+    filter: blur(10px); /* 5px blur effect */
+}
