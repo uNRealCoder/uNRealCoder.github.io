@@ -1,110 +1,190 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-  font: 400 15px/1.8 "Lato", sans-serif;
-  color: #777;
-}
-
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  position: relative;
-  opacity: 0.65;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
-.bgimg-1 {
-  background-image: url("Background.jpg");
-  min-height: 100%;
-  background-position: center;
-}
-
-.bgimg-2 {
-  background-image: url("Background.jpg");
-  min-height: 400px;
-  background-position: center;
-}
-
-.bgimg-3 {
-  background-image: url("Background.jpg");
-  min-height: 100px;
-  background-position: bottom;
-}
-
-.caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-}
-
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
-}
-
-h3 {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-  color: #111;
-}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-  }
-}
-</style>
-</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>NR's Personal Website</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 <body>
-
-<div class="bgimg-1">
-  <div class="caption">
-  <span class="border">WORK IN PROGRESS</span>
+    <div id="content" style="display: contents;">
+        <div id="desktop" style="display: contents;">
+<!--Navigation Bar-->
+<header>
+<div class="navbar">
+    <a href="#home" class="navbar-link">Home</a>
+    <a href="#about" class="navbar-link">About</a>
+    <a href="#skills" class="navbar-link">Skills</a>
+    <a href="#experience" class="navbar-link">Experience</a>
+    <a href="#contact" class="navbar-link">Contact</a>
   </div>
-</div>
-
-<div style="color: rgb(234, 122, 238);background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
-  <h3 style="text-align:center;">Parallax Demo</h3>
-  <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
-</div>
-
-<div class="bgimg-2">
-  <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>
-  </div>
-</div>
-
-<div style="position:relative;">
-  <div style="color:rgb(238, 151, 151);background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-  <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
-  </div>
-</div>
-
-<div class="bgimg-3">
-  <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
-  </div>
-</div>
-
-<div style="position:relative;">
-  <div style="color:rgb(158, 235, 128);background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-  <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
-  </div>
-</div>
-
+</header>
+  <!--Home-->
+    <div id="home" class="bgimg-1">
+        <div class="parallax-section">
+            <h1>Hello!</h1>
+            <p style="font-family: monospace;"><span style="color: blue;">class</span> 
+                <span style="color: greenyellow;">Nikhil_Ranjan</span>
+                (<span style="color: greenyellow;">Human</span>,
+                <span style="color: greenyellow;">AI_ML_Skills</span>,
+                <span style="color: greenyellow;">Analyst</span>,
+                <span style="color: greenyellow;">Developer</span>,
+                <span style="color: greenyellow;">Statistics</span>,
+                <span style="color: greenyellow;">Web3</span>):</p>
+                <p style="color: burlywood;">"""
+                Work in Progress. Expected Time of Completion: Lifetime.
+                """
+            </p>
+        </div>
+    </div>
+    <!--About-->
+    <div id="about" class="bgimg-1">
+    <div class="parallax-section">
+        <h1>About</h1>
+        <p> I am Nikhil Ranjan and I am passionate about AI and ML. 
+            I have a Master of Science in Artifical Intelligence from the University of Georgia and I have more than 1.5 years of experience in research and development in the field of AI.
+            My research includes stacked ensembling for stock price prediction and analyzing web3 data to detect fraud. I've completed projects in cryptocurrency forecasting, sentiment analysis, and time series data using Deep Learning techniques. 
+            <br><br>I can utilize Python, R, Tableau, C#, JavaScript, SQL, HTML5 & CSS3 for AI, data analysis, visualization, and web development.
+            I am committed to making meaningful contributions to the field of AI and ML by leveraging my strong academic background and technical skills to drive innovation and solve complex problems.</p>
+    </div>
+    </div>
+    <div id="skills" class="bgimg-1">
+    <div class="parallax-section">
+        <h1>Skills</h1>
+        <table id="skillsTable">
+            <tbody style="padding-right: 1em;">
+                <tr>
+                    <td>
+                        <img src="python-logo.png" alt="Python" width="20" height="20">
+                        Python
+                    </td>
+                    <td>NumPy, Scikit-learn, TensorFlow, Pandas,
+                        Matplotlib, Keras, Jupyter Notebooks, NetworkX, Dask.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Experience in working with various Deep Learning and
+                        statistical based learning algorithms.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Machine Learning and Deep Learning in Python.</td>
+                </tr>
+                <tr>
+                    <td>
+<img src="r-logo.png" alt="R" width="20" height="20"> R
+                    </td>
+                    <td>
+                        ggplot, Tidyverse, Rvest, RMySQL
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src = "sql-logo.png" alt="SQL" width="20" height="20">
+                        SQL
+                    </td>
+                    <td>
+                        MS-SQL, Oracle, MySQL
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+<span>
+    <img src = "excel-logo.png" alt="Excel" width="20" height="20">
+    <img src = "matlab-logo.png" alt="MATLAB" width="20" height="20">
+</span>
+Excel & MATLAB
+                    </td>
+                    <td>
+                        Experience with data processing and filtering in Python,
+MATLAB, and Microsoft Excel.
+                    </td>
+                </tr>
+                <tr>
+<td>
+<img src="csharp-logo.png" alt="C#" width="20" height="20"> C#
+</td>
+<td>
+    Full Stack Web Dev on .NET (HTML, CSS, JavaScript, C#,
+SQL).
+</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <!-- <div id="experience" class="bgimg-1">
+    <div class="parallax-section">
+        <h1>Experience</h1>
+        <table id="experienceTable">
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="uga-logo.png" alt="UGA" width="20" height="20">
+                        University of Georgia
+                    </td>
+                    <td>
+                        <b>Graduate Research Assistant</b>
+                        <br>
+                        <i>August 2019 - May 2021</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>Developed a stacked ensembling model for stock price prediction.</li>
+                            <li>Developed a web3 data analysis tool to detect fraud.</li>
+                            <li>Developed a cryptocurrency forecasting model.</li>
+                            <li>Developed a sentiment analysis model.</li>
+                            <li>Developed a time series data analysis model.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="uga-logo.png" alt="UGA" width="20" height="20">
+                        University of Georgia
+                    </td>
+                    <td>
+                        <b>Graduate Teaching Assistant</b>
+                        <br>
+                        <i>August 2019 - May 2021</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>Assisted in teaching the following courses: 
+                                <ul>
+                                    <li>Introduction to Artificial Intelligence</li>
+                                    <li>Introduction to Data Science</li>
+                                    <li>Introduction to Data Mining</li>
+                                    <li>Introduction to Machine Learning</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="uga-logo.png" alt="UGA" width="20" height="20">
+                        University of Georgia
+                    </td>
+                    <td>
+                        <b>Graduate Teaching Assistant</b>
+                        <br>
+                        <i>August 2019 - May 2021</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>Assisted in teaching the following courses: 
+                                <ul>
+        </div> -->
 </body>
 </html>

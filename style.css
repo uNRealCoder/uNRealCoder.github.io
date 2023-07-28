@@ -1,0 +1,143 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 18px/1.8 "Lato", sans-serif;
+    color: #000000;
+    scroll-behavior: smooth;
+  }
+  /* Styling for the parallax background images */
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+    opacity: 1;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image: linear-gradient(black, rgb(45, 0, 45)); */
+  }
+  
+  .bgimg-1 {
+    min-height: 100%;
+    background-position: center;
+    animation: bgimgdark 5s infinite;
+    transition: background-color 2s ease-in-out;
+  }
+
+  @keyframes bgimgdark {
+    0% {
+      background-color: black
+    }
+    25% {
+      background-color: rgb(10, 0, 0)
+    }
+    50% {
+      background-color: rgb(0, 10, 0)
+    }
+    75% {
+      background-color: rgb(0, 0, 10)
+    }
+    100% {
+      background-color: black
+    }
+  }
+    
+
+  .bgimg-2 {
+    background-size: 10%;
+    background-position: center;
+    background-size: contain;
+    background-image: linear-gradient(black, rgb(45, 0, 45));
+  }
+  /*apply blur to bgimg-1 but not to section*/
+  .bgimg-1::not(.parallax-caption):not(.parallax-section) {
+    filter: blur(16px);
+    -webkit-filter: blur(16px);
+  }
+  
+  /* Styling for the text caption on the parallax sections */
+  .parallax-caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    opacity: 0.7;
+  }
+  
+  .parallax-caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
+  
+  h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+  }
+  
+
+  /* Additional styling for content sections */
+  .parallax-section {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    padding: 50px 80px;
+    text-align: justify;
+  }
+  
+  .section h3 {
+    text-align: center;
+  }
+  
+  .section p {
+    text-align: justify;
+  }
+  
+  /* Styling for the navigation bar */
+  .navbar {
+    overflow: hidden;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: white;
+    z-index: 999;
+  }
+  
+  .navbar-link {
+    float: center;
+    display: inline-flex;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+
+/* if desktop */
+.mobile_device{
+    display: none;
+}
+  
+/* if mobile device max width 480px set as important*/
+@media only screen and (max-width: 700px) {
+    .mobile_device {display: block !important;}
+    .desktop {display: contents !important;}
+  }
+  
+  @media only screen and (min-width: 701px) {
+    .mobile_device {display: none !important;}
+    .desktop {display: contents !important;}
+  }
+  #skillsTable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #skillsTable tbody td:nth-child(1){
+    font-weight: bold;
+  }
+  
