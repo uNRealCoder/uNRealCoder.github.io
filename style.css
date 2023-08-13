@@ -1,245 +1,245 @@
 body, html {
-  height: 100%;
-  margin: 0;
-  font: 400 18px/1.8 "Lato", sans-serif;
-  color: #000000;
-  scroll-behavior: smooth;
-}
-/* Styling for the parallax background images */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  position: relative;
-  opacity: 1;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 1em;
-  /* background-image: linear-gradient(black, rgb(45, 0, 45)); */
-}
+    height: 100%;
+    margin: 0;
+    font: 400 18px/1.8 "Lato", sans-serif;
+    color: #000000;
+    scroll-behavior: smooth;
+  }
+  /* Styling for the parallax background images */
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+    opacity: 1;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1em;
+    /* background-image: linear-gradient(black, rgb(45, 0, 45)); */
+  }
+  
+  .bgimg-1 {
+    min-height: auto;
+    background-position: center;
+    animation: bgimgdark 5s infinite;
+    transition: background-color 2s ease-in-out;
 
-.bgimg-1 {
-  min-height: auto;
-  background-position: center;
-  animation: bgimgdark 5s infinite;
-  transition: background-color 2s ease-in-out;
+  }
 
-}
+  @keyframes bgimgdark {
+    0% {
+      background-color: black
+    }
+    25% {
+      background-color: rgb(0, 0, 0)
+    }
+    75% {
+      background-color: rgb(0, 0, 00)
+    }
+    100% {
+      background-color: black
+    }
+  }
+    
 
-@keyframes bgimgdark {
-  0% {
-    background-color: black
+  .bgimg-2 {
+    background-size: 10%;
+    background-position: center;
+    background-size: contain;
+    background-image: linear-gradient(black, rgb(45, 0, 45));
   }
-  25% {
-    background-color: rgb(0, 0, 0)
+  /*apply blur to bgimg-1 but not to section*/
+  .bgimg-1::not(.parallax-caption):not(.parallax-section) {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
   }
-  75% {
-    background-color: rgb(0, 0, 00)
+  
+  /* Styling for the text caption on the parallax sections */
+  .parallax-caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    opacity: 0.7;
   }
-  100% {
-    background-color: black
+  
+  .parallax-caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
   }
-}
+  
+  h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+  }
   
 
-.bgimg-2 {
-  background-size: 10%;
-  background-position: center;
-  background-size: contain;
-  background-image: linear-gradient(black, rgb(45, 0, 45));
-}
-/*apply blur to bgimg-1 but not to section*/
-.bgimg-1::not(.parallax-caption):not(.parallax-section) {
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-}
+  /* Additional styling for content sections */
+  .parallax-section {
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    padding: 10px 10px;
+    text-align: justify;
+    animation: cool 0.6s ease-in-out forwards;
+    animation-delay: 0.1s;
+  }
 
-/* Styling for the text caption on the parallax sections */
-.parallax-caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-  opacity: 0.7;
-}
-
-.parallax-caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  font-size: 25px;
-  letter-spacing: 10px;
-}
-
-h3 {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
-  color: #111;
-}
-
-
-/* Additional styling for content sections */
-.parallax-section {
-  opacity: 0;
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0);
-  text-align: center;
-  padding: 10px 10px;
-  text-align: justify;
-  animation: cool 0.6s ease-in-out forwards;
-  animation-delay: 0.1s;
-}
-
-
-.section h3 {
-  text-align: center;
-}
-
-.section p {
-  text-align: justify;
-}
-
-/* Styling for the navigation bar */
-.navbar {
-  overflow: hidden;
-  background-color: #000000;
-  position: block;
-  top: 0;
-  width: 100%;
-  color: white;
-  z-index: 1000;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.navbar-link {
-  float: center;
-  display: inline-flex;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-.navbar-link:hover {
-  background-color: blue;
-  color: #ffffff;
-}
-#skillsTable {
-  border-collapse: collapse;
-  width: 100%;
-}
-#skillsTable tbody td:nth-child(1){
-  font-weight: bold;
-}
-
+  
+  .section h3 {
+    text-align: center;
+  }
+  
+  .section p {
+    text-align: justify;
+  }
+  
+  /* Styling for the navigation bar */
+  .navbar {
+    overflow: hidden;
+    background-color: #000000;
+    position: block;
+    top: 0;
+    width: 100%;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .navbar-link {
+    float: center;
+    display: inline-flex;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  .navbar-link:hover {
+    background-color: blue;
+    color: #ffffff;
+  }
+  #skillsTable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #skillsTable tbody td:nth-child(1){
+    font-weight: bold;
+  }
+  
 #desktopBkGroundOverlay{
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-  height: 100%;
-  width: 100%;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  background-color: rgb(0,0,0); /* Black fallback color */
-  background-color: rgba(0,0,0, 0.01); /* Black w/opacity */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s;
-  pointer-events: none;
-  font-size: 9px;
-  font-weight: bold;
-  color: #00ff00; /* Green color for the text */
-  text-shadow: 0 0 7px rgba(0, 255, 0, 0.6); /* Green glow effect */
-  filter: blur(5px); /* 5px blur effect */
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.01); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s;
+    pointer-events: none;
+    font-size: 9px;
+    font-weight: bold;
+    color: #00ff00; /* Green color for the text */
+    text-shadow: 0 0 7px rgba(0, 255, 0, 0.6); /* Green glow effect */
+    filter: blur(5px); /* 5px blur effect */
 }
 
 @media screen and (max-width: 800px) {
-tr { 
-  display: flex; 
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0.5em 0;
-  border: 1px solid rgba(3,3,3,0.2);
-}
-td, th {
-  flex: 1 1 150px;
-  border: 0.5px solid rgba(3,3,3,0.2);
-}
-td.edit-buttons, td.empty {
-  /*flex: 1 0 90%;
-  text-align: center;*/
-}
-thead{
-  display: none;
-}
+  tr { 
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em 0;
+    border: 1px solid rgba(3,3,3,0.2);
+  }
+  td, th {
+    flex: 1 1 150px;
+    border: 0.5px solid rgba(3,3,3,0.2);
+  }
+  td.edit-buttons, td.empty {
+    /*flex: 1 0 90%;
+    text-align: center;*/
+  }
+  thead{
+    display: none;
+  }
 }
 
 /*Have elements slide up into view*/
 
 @keyframes cool {
-to {
-  opacity: 1;
-}
+  to {
+    opacity: 1;
+  }
 }
 
 #aboutBox {
-width: 100%;
-display:flex;
-flex-wrap: nowrap;
+  width: 100%;
+  display:flex;
+  flex-wrap: nowrap;
 }
 
 /*change flex-wrap to wrap if mobile*/
 @media screen and (max-width: 850px) {
-#aboutBox {
-  flex-wrap: wrap !important;
-}
-#professionalExpTable_mob{
-  display: block;
-}
-#researchExpTable_Mob{
-  display: block;
-}
+  #aboutBox {
+    flex-wrap: wrap !important;
+  }
+  #professionalExpTable_mob{
+    display: block;
+  }
+  #researchExpTable_Mob{
+    display: block;
+  }
 
-#professionalExpTable{
-  display: none;
-}
-#researchExpTable{
-  display: none;
-}
+  #professionalExpTable{
+    display: none;
+  }
+  #researchExpTable{
+    display: none;
+  }
 }
 
 @media screen and (min-width: 850px) {
-#professionalExpTable_mob{
-  display: none;
-}
-#researchExpTable_Mob{
-  display: none;
-}
-#professionalExpTable{
-  display: block;
-}
-#researchExpTable{
-  display: block;
-}
+  #professionalExpTable_mob{
+    display: none;
+  }
+  #researchExpTable_Mob{
+    display: none;
+  }
+  #professionalExpTable{
+    display: block;
+  }
+  #researchExpTable{
+    display: block;
+  }
 }
 
 /*first td not have bullet points*/
 #researchExpTable_Mob > tbody > tr > td:first-child > ul{
-list-style: none;
+  list-style: none;
 }
 
 #contactContents{
-display: inline-flex;
-flex-wrap: wrap;
-justify-content: left;
-align-items: left;
-text-align: left;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
 }
 
 #contactContents > *{
-padding: 10px;
+  padding: 10px;
 }
