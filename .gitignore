@@ -1,0 +1,11 @@
+# Working docs — briefs, review notes, drafts. Not part of the site.
+.docs/
+
+# Source resume(s), including the full private copy with phone number and
+# internal figures. The sanitized public PDF lives at the repo root
+# (Nikhil-Ranjan-Resume.pdf) and is generated from resume.html.
+docs/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
