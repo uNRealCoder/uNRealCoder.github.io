@@ -364,7 +364,7 @@ main {
 }
 
 .section {
-  padding: clamp(50px, 8vw, 50px) 0;
+  padding: clamp(56px, 9vw, 96px) 0;
 }
 
 .section__head {
@@ -537,28 +537,23 @@ main {
 .code__bar {
   display: flex;
   align-items: center;
-  gap: 7px;
+  justify-content: space-between;
+  gap: 12px;
   padding: 10px 14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex: none;
-  opacity: 0.9;
-}
-
-.dot--r { background: #ff5f57; }
-.dot--y { background: #febc2e; }
-.dot--g { background: #28c840; }
-
 .code__file {
-  margin-left: 8px;
   font-family: var(--font-mono);
   font-size: 12px;
   color: rgba(223, 226, 232, 0.85);
+}
+
+.code__hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(223, 226, 232, 0.5);
 }
 
 .code__body {
@@ -912,16 +907,11 @@ main {
 }
 
 .cert::before {
-  content: "+";
+  content: "\2713";
   position: absolute;
   left: 4px;
   top: 11px;
   font-family: var(--font-mono);
-  color: var(--ink-faint);
-}
-
-.cert--new::before {
-  content: "\2713";
   color: var(--signal);
 }
 
@@ -1081,7 +1071,9 @@ main {
 /* ---------------------------------------------------------
    Scroll reveal
    --------------------------------------------------------- */
-.reveal {
+/* Hidden only once JS is confirmed running (html.js set before paint).
+   Without JS, or if main.js fails, content stays visible. */
+.js .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -1193,9 +1185,9 @@ main {
     transition-duration: 0.001ms !important;
   }
 
-  .reveal {
-    opacity: 1;
-    transform: none;
+  .js .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .ambient__log {

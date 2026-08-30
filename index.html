@@ -33,6 +33,10 @@
     <!-- Set the theme before first paint so there is no flash. -->
     <script>
         (function () {
+            // Mark JS as live so scroll-reveal can safely hide content.
+            // If this script or main.js fails, .reveal content stays visible.
+            document.documentElement.classList.add("js");
+
             var t = null;
             try { t = localStorage.getItem("theme"); } catch (e) { /* blocked storage */ }
             if (t === "light" || t === "dark") {
@@ -139,7 +143,7 @@
                     <p class="spec spec--hero reveal">
                         <span>LLMs</span><span>RAG</span><span>graph ML</span><span>GNN</span>
                         <span class="spec__sep">/</span>
-                        <span>10<sup>9</sup> edges</span><span>~50&times; faster ETL</span>
+                        <span>10<sup>9</sup> edges</span><span>~50&times; faster ETL</span><span>$100M+ fraud stopped</span>
                         <span class="status">in production</span>
                     </p>
 
@@ -152,13 +156,11 @@
                 <div class="hero__code reveal" aria-label="A Python snippet describing me">
                     <div class="code">
                         <div class="code__bar">
-                            <span class="dot dot--r"></span><span class="dot dot--y"></span><span
-                                class="dot dot--g"></span>
                             <span class="code__file">whoami.py</span>
+                            <span class="code__hint">python3</span>
                         </div>
                         <pre class="code__body"><code><span class="k">from</span> <span class="m">transactions.fraud</span> <span class="k">import</span> <span class="t">TransactionGraph</span>
 <span class="k">from</span> <span class="m">serving</span> <span class="k">import</span> <span class="t">Inference</span>
-
 
 <span class="k">class</span> <span class="t">NikhilRanjan</span>(<span class="t">Inference</span>):
     <span class="s">"""Turns messy production data into predictions that don't fall over."""</span>
@@ -198,18 +200,18 @@
                             At Mastercard I build inference infrastructure for fraud detection. The core of it is a
                             <strong>graph feature library</strong> that data science teams use to turn raw transaction
                             data into GNN embeddings, on graphs with <strong>billions of edges</strong>. Those embeddings
-                            feed fraud models that run in production. I moved the whole graph pipeline off CPUs onto GPUs
-                            with <strong>NVIDIA RAPIDS</strong> and <strong>cuGraph</strong>, which made it roughly
-                            <strong>50&times; faster</strong> &mdash; jobs that used to run for hours now finish in
+                            feed fraud models that run in production and have stopped more than
+                            <strong>$100M</strong> in fraudulent transactions. I moved the whole graph pipeline off CPUs
+                            onto GPUs with <strong>NVIDIA RAPIDS</strong> and <strong>cuGraph</strong>, which made it
+                            roughly <strong>50&times; faster</strong> &mdash; jobs that used to run for hours now finish in
                             minutes.
                         </p>
                         <p class="reveal">
                             The other half is language models. I deployed production <strong>LLMs with vLLM</strong> and
                             large <strong>embedding models with ONNX</strong> behind agentic workflows that fraud
-                            investigators use to pull the case knowledge they need in minutes instead of days. I am also
-                            the <strong>production engineering lead</strong> for several of those data science teams
-                            &mdash; the person who turns a promising prototype into a system that stays up and can be
-                            watched.
+                            investigators use to pull the case knowledge they need in minutes instead of days. I also
+                            work closely with several of those data science teams, turning promising prototypes into
+                            systems that stay up and can be watched.
                         </p>
                         <p class="reveal">
                             Before Mastercard I did research at the <strong>University of Georgia</strong>, where I
@@ -225,8 +227,8 @@
                     </div>
 
                     <aside class="about__card reveal">
-                        <img class="about__photo" src="profile-pic.jpg" alt="Portrait of Nikhil Ranjan" width="200"
-                            height="200" loading="lazy">
+                        <img class="about__photo" src="profile-pic.jpg" alt="Portrait of Nikhil Ranjan" width="124"
+                            height="124" loading="lazy">
                         <dl class="facts">
                             <div>
                                 <dt>Now</dt>
@@ -291,6 +293,7 @@
                                 <span>10<sup>9</sup> edges</span>
                                 <span>graph ETL: hours &rarr; minutes</span>
                                 <span>~50&times;</span>
+                                <span>$100M+ fraud stopped</span>
                                 <span class="status">in production</span>
                             </p>
                             <ul class="job__points">
@@ -300,16 +303,19 @@
                                     investigation.</li>
                                 <li>Built a <strong>graph feature library</strong> that data science teams use to turn
                                     raw transaction data into GNN embeddings, on graphs with billions of edges. The
-                                    embeddings feed fraud models in production.</li>
+                                    embeddings feed fraud models in production that have stopped
+                                    <strong>$100M+</strong> in fraudulent transactions.</li>
                                 <li>Moved graph ETL and compute from CPUs to GPUs with <strong>NVIDIA RAPIDS</strong> and
                                     <strong>cuGraph</strong>, making previously CPU-bound pipelines roughly 50&times;
                                     faster.</li>
+                                <li>Integrated <strong>Spark-accelerated inference</strong> into the GNN processing path,
+                                    a <strong>3&times;</strong> speedup for batch pipeline operations.</li>
                                 <li>Standardized graph ML workflows with <strong>sparse tensors</strong>, <strong>PyTorch
                                     Geometric</strong> and <strong>DGL</strong>, so pipelines over heterogeneous
                                     transaction graphs &mdash; account, merchant and other node types &mdash; reproduce
                                     the same result every run.</li>
-                                <li>Acted as the <strong>production engineering lead for 5+ data science teams</strong>,
-                                    hardening prototype graph models into resilient, observable systems.</li>
+                                <li>Worked with <strong>5+ data science teams</strong> to harden prototype AI models and
+                                    agents into resilient, observable production systems.</li>
                             </ul>
                             <ul class="tags">
                                 <li>vLLM</li>
@@ -318,6 +324,7 @@
                                 <li>DGL</li>
                                 <li>cuGraph</li>
                                 <li>RAPIDS</li>
+                                <li>Spark</li>
                                 <li>LangGraph</li>
                                 <li>Python</li>
                             </ul>
@@ -358,10 +365,9 @@
                             <h3 class="job__title">Software Engineer</h3>
                             <p class="job__org">CenturyLink&reg; (now Lumen&reg;), India</p>
                             <ul class="job__points">
-                                <li>Developed and maintained critical web applications supporting law enforcement, as a
-                                    full-stack <strong>.NET</strong> developer.</li>
-                                <li>Trained team members in JavaScript and cybersecurity fundamentals, helping the team
-                                    build more secure APIs without slowing development down.</li>
+                                <li>Designed and maintained secure APIs and full-stack <strong>.NET</strong> web
+                                    applications for 911 information-retrieval systems, handling real-time document
+                                    processing at scale for law-enforcement operations.</li>
                                 <li>Recognized with <strong>5 performance awards</strong> as a top performer.</li>
                             </ul>
                             <ul class="tags">
@@ -432,10 +438,10 @@
                         </div>
                         <p class="edu__where">University of Georgia, Athens, USA &nbsp;·&nbsp; GPA 3.8 / 4.0</p>
                         <ul>
-                            <li>Focused coursework on statistics, machine learning and business intelligence (MIST
-                                7770).</li>
                             <li>Research assistant under the Terry College of Business for 7 months.</li>
                             <li>Thesis: stacked ensembling methods for stock price prediction.</li>
+                            <li>Built an end-to-end sentiment-analysis pipeline over 500K+ Bitcoin tweets with VADER, and
+                                found tweet <em>volume</em> to be a stronger price signal than sentiment.</li>
                         </ul>
                     </article>
 
@@ -467,10 +473,10 @@
                 </div>
 
                 <ul class="certs reveal">
-                    <li class="cert cert--new">
+                    <li class="cert">
                         <span class="cert__name">Agentic AI with LangGraph, CrewAI, AutoGen &amp; BeeAI</span>
                     </li>
-                    <li class="cert cert--new">
+                    <li class="cert">
                         <span class="cert__name">IBM RAG and Agentic AI Certification</span>
                     </li>
                     <li class="cert">
@@ -614,8 +620,6 @@
     <footer class="footer">
         <div class="wrap footer__inner">
             <p>&copy; <span id="year">2026</span> Nikhil Ranjan</p>
-            <p class="footer__note">Written in HTML, CSS and JS. No framework, no build step, no cookie
-                banner.</p>
         </div>
     </footer>
 

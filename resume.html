@@ -9,7 +9,7 @@
     <style>
         /* Print-first résumé. `Nikhil-Ranjan-Resume.pdf` is generated from this file:
            msedge --headless=new --no-pdf-header-footer --print-to-pdf=Nikhil-Ranjan-Resume.pdf resume.html
-           Public copy: no phone number, no internal dollar figures. */
+           Public copy: no phone number. */
 
         :root {
             --ink: #16181d;
@@ -198,10 +198,10 @@
 
         <p class="summary">
             Senior AI Engineer specializing in production inference systems at scale. 5+ years architecting end-to-end
-            inference infrastructure for LLMs, GNNs, and traditional ML models. At Mastercard, deployed production LLMs
-            (vLLM) and large embedding models (ONNX) supporting multiple agentic workflows, and built billion-scale GNN
-            inference feeding production fraud-detection models. Achieved ~50&times; speedup on graph pipelines through
-            GPU acceleration (NVIDIA RAPIDS, cuGraph). M.S. in Artificial Intelligence from the University of Georgia.
+            infrastructure for LLMs, GNNs, and traditional ML. At Mastercard, deployed production LLMs (vLLM) and large
+            embedding models (ONNX) for agentic workflows, and built billion-scale GNN inference feeding fraud-detection
+            models that stopped $100M+ in fraudulent transactions. Achieved ~50&times; speedup on graph pipelines through
+            GPU acceleration (NVIDIA RAPIDS, cuGraph). M.S. in Artificial Intelligence, University of Georgia.
         </p>
 
         <h2>Professional Experience</h2>
@@ -216,15 +216,17 @@
                     workflows; built internal tooling for automated knowledge retrieval, reducing investigation overhead
                     by multiple days.</li>
                 <li>Architected a production graph feature-extraction library enabling data science teams to generate
-                    GNN-based embeddings at billion-scale from raw transaction data, feeding fraud models that run in
-                    production.</li>
+                    GNN-based embeddings at billion-scale from raw transaction data, feeding fraud models that stopped
+                    $100M+ in fraudulent transactions.</li>
                 <li>Drove ~50&times; speed improvement on graph ETL and compute workloads by integrating NVIDIA RAPIDS
                     and cuGraph, enabling GPU execution of previously CPU-bound graph pipelines.</li>
-                <li>Designed standardized graph ML workflows using sparse tensors, PyTorch Geometric (PyG) and DGL,
-                    establishing reproducible pipelines for heterogeneous transaction-graph modelling across account,
-                    merchant, and other node types.</li>
-                <li>Served as production engineering lead for 5+ data science teams, hardening prototype graph ML models
-                    into resilient, observable production systems.</li>
+                <li>Integrated Spark-accelerated inference into the GNN processing path, a 3&times; improvement for batch
+                    pipeline operations.</li>
+                <li>Designed standardized graph ML workflows with sparse tensors, PyTorch Geometric (PyG) and DGL &mdash;
+                    reproducible pipelines for heterogeneous transaction graphs across account, merchant, and other node
+                    types.</li>
+                <li>Worked with 5+ data science teams to harden prototype AI models and agents into resilient, observable
+                    production systems.</li>
             </ul>
         </div>
 
@@ -235,8 +237,7 @@
             <ul>
                 <li>Researched the impact of social-media bot activity on stock and crypto returns using VAR and NLP
                     methods.</li>
-                <li>Built tweet-collection and analytics pipelines to measure the popularity of specific phrases and
-                    words.</li>
+                <li>Built tweet-collection and analytics pipelines tracking phrase and keyword popularity over time.</li>
                 <li>Worked with the ChatGPT API to automate generation of code documentation.</li>
             </ul>
         </div>
@@ -246,10 +247,8 @@
                 <span class="job__meta">Aug 2018 &ndash; Jan 2020</span>
             </div>
             <ul>
-                <li>Developed and maintained critical web applications supporting law enforcement as a full-stack .NET
-                    developer.</li>
-                <li>Trained the team in JavaScript and cybersecurity fundamentals, helping build more secure APIs without
-                    compromising delivery speed.</li>
+                <li>Designed and maintained secure APIs and full-stack .NET web applications for 911 information-retrieval
+                    systems, handling real-time document processing at scale for law-enforcement operations.</li>
                 <li>Recognized with 5 performance awards as a top performer.</li>
             </ul>
         </div>
@@ -290,9 +289,10 @@
                 <span class="edu__meta">Jan 2021 &ndash; Jul 2022 &nbsp;|&nbsp; GPA 3.8 / 4.0</span>
             </div>
             <ul>
-                <li>Coursework focused on statistics and ML, including MIST 7770 &ldquo;Business Intelligence&rdquo;.</li>
                 <li>Research assistant under the Terry College of Business for 7 months.</li>
                 <li>Thesis: stacked ensembling methods for stock price prediction.</li>
+                <li>Built a sentiment pipeline over 500K+ Bitcoin tweets (VADER); tweet volume beat sentiment as a price
+                    signal.</li>
             </ul>
         </div>
         <div class="edu">

@@ -11,7 +11,7 @@ regenerating the résumé PDF (see below), and only when the résumé changes.
 | `style.css`                 | Everything visual. Design tokens live in `:root` at the top; dark palette follows       |
 | `main.js`                   | Theme toggle, nav, scroll reveal, ambient serving log, runtime email assembly           |
 | `resume.html`               | Print-first résumé — the source the public PDF is generated from (`noindex`)            |
-| `Nikhil-Ranjan-Resume.pdf`  | Public résumé, linked from the site. Sanitized: no phone number, no internal figures    |
+| `Nikhil-Ranjan-Resume.pdf`  | Public résumé, linked from the site. Sanitized: no phone number                         |
 | `profile-pic.jpg`           | Portrait                                                                                |
 | `docs/`                     | Local only (git-ignored) — the full private résumé and anything else not for the site   |
 | `.docs/`                    | Local only (git-ignored) — briefs, review notes, drafts                                 |
@@ -34,8 +34,8 @@ msedge --headless=new --no-pdf-header-footer \
   http://localhost:8000/resume.html
 ```
 
-Keep it to one page. The public PDF must not contain the phone number or the
-"$100M" fraud figure — those stay in the private copy under `docs/` only.
+Keep it to one page. The public PDF must not contain the phone number — that
+stays in the private copy under `docs/` only.
 
 ## Editing
 
