@@ -9,7 +9,7 @@
         content="Senior AI Engineer at Mastercard, specializing in production inference systems for LLMs, RAG and GNNs at billion-scale. 5+ years building fraud detection and agentic AI infrastructure.">
     <meta name="author" content="Nikhil Ranjan">
     <meta name="keywords"
-        content="AI engineer, LLM deployment, RAG systems, graph ML, GNN inference, vLLM, ONNX, graph neural networks, fraud detection ML, NVIDIA RAPIDS, cuGraph, agentic AI">
+        content="AI engineer, LLM deployment, RAG systems, graph ML, GNN inference, vLLM, ONNX, graph neural networks, fraud detection ML, NVIDIA RAPIDS, cuGraph, agentic AI, model serving, ONNX Runtime, downshift-server">
     <meta name="theme-color" content="#ededee">
     <link rel="canonical" href="https://unrealcoder.github.io/">
 
@@ -104,6 +104,7 @@
             <a href="#experience">Experience</a>
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
             <a href="#writing">Writing</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -137,7 +138,9 @@
                     <p class="hero__lead reveal">
                         LLMs and RAG, graph ML and GNNs &mdash; taken from research prototype to something that serves
                         billions of transactions and keeps serving them. I have an M.S. in Artificial Intelligence and
-                        five years spent mostly on the part that comes after the demo.
+                        five years spent mostly on the part that comes after the demo. Off the clock I maintain
+                        <a href="#projects">downshift-server</a>, an open-source model server that checks its own
+                        work.
                     </p>
 
                     <p class="spec spec--hero reveal">
@@ -222,7 +225,9 @@
                         </p>
                         <p class="reveal">
                             On weekends I build RAG systems and agents with LangGraph, CrewAI and AutoGen, mostly to
-                            find out where they break.
+                            find out where they break. Lately the weekends went to <strong>downshift-server</strong>,
+                            a model server I wrote and released as open source. It refuses to serve an ONNX export that
+                            gives the wrong numbers.
                         </p>
                     </div>
 
@@ -338,7 +343,7 @@
                         <div class="job__body">
                             <h3 class="job__title">AI Research Assistant</h3>
                             <p class="job__org">University of Georgia, USA</p>
-                            <p class="job__note">May 2021 &ndash; Nov 2021 &nbsp;·&nbsp; Aug 2022 &ndash; Aug 2023</p>
+                            <p class="job__note">May 2021 &ndash; Nov 2021 &nbsp;·&nbsp; Aug 2022 &ndash; Jul 2023</p>
                             <ul class="job__points">
                                 <li>Researched how social-media bot activity affects stock and crypto returns, using
                                     <strong>VAR models</strong> and NLP methods.</li>
@@ -480,6 +485,9 @@
                         <span class="cert__name">IBM RAG and Agentic AI Certification</span>
                     </li>
                     <li class="cert">
+                        <span class="cert__name">Build Multimodal Generative AI Applications</span>
+                    </li>
+                    <li class="cert">
                         <span class="cert__name">CE&amp;QIP Course in Machine Learning and AI</span>
                         <span class="cert__by">IIT Bombay · Aug 2020</span>
                     </li>
@@ -512,6 +520,59 @@
                         <span class="cert__by">BITS Goa · Mar 2019</span>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- ============ PROJECTS ============ -->
+        <section id="projects" class="section" aria-labelledby="projTitle">
+            <div class="wrap">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">Open source</span>
+                    <h2 id="projTitle" class="section__title">Things I shipped on my own time</h2>
+                </div>
+
+                <ol class="jobs">
+                    <li class="job reveal">
+                        <div class="job__meta">
+                            <span class="job__when">Sep 2026 &ndash; now</span>
+                            <span class="status">v1.0.0</span>
+                        </div>
+                        <div class="job__body">
+                            <h3 class="job__title">downshift-server</h3>
+                            <p class="job__org">Open-source model server &middot; Python &middot; MIT</p>
+                            <p class="job__note">pip install downshift-server</p>
+                            <p class="spec">
+                                <span>PyTorch &rarr; ONNX</span>
+                                <span>verified export</span>
+                                <span>3.7&times; vs FastAPI + PyTorch</span>
+                                <span>CPU-first</span>
+                                <span class="status">on PyPI</span>
+                            </p>
+                            <ul class="job__points">
+                                <li>Serves a PyTorch model, an ONNX file or a downloaded Hugging Face model over HTTP
+                                    with <strong>one command</strong>.</li>
+                                <li>Before the first request, it exports the model to <strong>ONNX</strong> and
+                                    compares the graph with PyTorch on inputs the exporter never saw. If the numbers
+                                    are wrong, it serves eager PyTorch instead, so a broken export never reaches a
+                                    client.</li>
+                                <li>Served <strong>3.7&times;</strong> the requests per second of a plain FastAPI +
+                                    PyTorch server on all-MiniLM-L6-v2 (8 clients, CPU). It also has an
+                                    OpenAI-compatible embeddings route, a result cache, Prometheus metrics and GPU
+                                    serving.</li>
+                            </ul>
+                            <div class="project__links">
+                                <a class="btn btn--primary" href="https://github.com/uNRealCoder/downshift-server"
+                                    target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <a class="btn" href="https://pypi.org/project/downshift-server/" target="_blank"
+                                    rel="noopener noreferrer">PyPI</a>
+                                <a class="btn" href="https://downshift-server.readthedocs.io" target="_blank"
+                                    rel="noopener noreferrer">Docs</a>
+                                <a class="btn" href="https://medium.com/@nrnikhilranjan1997/downshift-server-serve-pytorch-or-hugging-face-models-correctly-in-three-commands-47650b712bef"
+                                    target="_blank" rel="noopener noreferrer">Read the write-up</a>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
             </div>
         </section>
 

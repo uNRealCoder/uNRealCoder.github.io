@@ -744,6 +744,12 @@ main {
   margin: 0 0 16px;
 }
 
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .job__points {
   margin: 0 0 16px;
   padding: 0;
