@@ -13,6 +13,7 @@ regenerating the résumé PDF (see below), and only when the résumé changes.
 | `resume.html`               | Print-first résumé — the source the public PDF is generated from (`noindex`)            |
 | `Nikhil-Ranjan-Resume.pdf`  | Public résumé, linked from the site. Sanitized: no phone number                         |
 | `profile-pic.jpg`           | Portrait                                                                                |
+| `favicon.svg`, `favicon-96.png` | Site icon. Real files (not a `data:` URI) so search engines can show it. Re-render the PNG if the SVG changes |
 | `robots.txt`                | Allows all crawlers (AI crawlers too). Points to the sitemap                            |
 | `sitemap.xml`               | Homepage only. Update `<lastmod>` when content changes                                  |
 | `docs/`                     | Local only (git-ignored) — the full private résumé and anything else not for the site   |
