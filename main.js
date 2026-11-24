@@ -251,7 +251,34 @@
   }
 
   /* -------------------------------------------------------
-     6. Odds and ends
+     6. Analytics events (GoatCounter).
+     One delegated listener, so links made at runtime (email)
+     are covered. No-op if count.js is blocked or not loaded.
+     ------------------------------------------------------- */
+
+  function eventName(a) {
+    var href = a.getAttribute("href") || "";
+    if (href.indexOf("mailto:") === 0) return "email-click";
+    if (/\.pdf$/i.test(a.pathname)) return "cv-download";
+    if (a.hostname && a.hostname !== location.hostname) {
+      return "out: " + a.hostname + a.pathname.replace(/\/$/, "");
+    }
+    return null;
+  }
+
+  function setupAnalytics() {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a[href]") : null;
+      if (!a) return;
+      var name = eventName(a);
+      var gc = window.goatcounter;
+      if (!name || !gc || typeof gc.count !== "function") return;
+      gc.count({ path: name, title: a.textContent.trim().slice(0, 80), event: true });
+    });
+  }
+
+  /* -------------------------------------------------------
+     7. Odds and ends
      ------------------------------------------------------- */
 
   function setupYear() {
@@ -278,6 +305,7 @@
     setupNav();
     setupReveal();
     setupEmail();
+    setupAnalytics();
     setupYear();
     renderConsole();
     greet();

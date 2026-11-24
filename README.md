@@ -13,6 +13,8 @@ regenerating the résumé PDF (see below), and only when the résumé changes.
 | `resume.html`               | Print-first résumé — the source the public PDF is generated from (`noindex`)            |
 | `Nikhil-Ranjan-Resume.pdf`  | Public résumé, linked from the site. Sanitized: no phone number                         |
 | `profile-pic.jpg`           | Portrait                                                                                |
+| `robots.txt`                | Allows all crawlers (AI crawlers too). Points to the sitemap                            |
+| `sitemap.xml`               | Homepage only. Update `<lastmod>` when content changes                                  |
 | `docs/`                     | Local only (git-ignored) — the full private résumé and anything else not for the site   |
 | `.docs/`                    | Local only (git-ignored) — briefs, review notes, drafts                                 |
 
@@ -54,3 +56,10 @@ stays in the private copy under `docs/` only.
   `data-obf="user|domain"` and `main.js` joins the halves at runtime, so scrapers
   reading the raw HTML get the decoy in `.honeypot` instead.
 - **Skill areas** are always listed in the order LLMs → RAG → graph ML → GNN.
+- **Analytics** is [GoatCounter](https://unrealcoder.goatcounter.com) — cookieless, so
+  no consent banner. The tag is at the end of `index.html`; it ignores `localhost`.
+  `main.js` sends click events through one delegated listener: `cv-download`,
+  `email-click` and `out: <host><path>` for outbound links. `resume.html` has no tag
+  on purpose (print source, `noindex`).
+- **robots.txt / sitemap:** do not `Disallow` `resume.html`. Crawlers must fetch it to
+  see its `noindex` tag.

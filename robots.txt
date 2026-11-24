@@ -1,0 +1,7 @@
+# All crawlers, including AI crawlers, may read the whole site.
+# resume.html is not blocked on purpose: it carries <meta name="robots" content="noindex">,
+# and crawlers must be able to fetch the page to see that tag.
+User-agent: *
+Allow: /
+
+Sitemap: https://unrealcoder.github.io/sitemap.xml
